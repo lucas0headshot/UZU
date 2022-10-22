@@ -1,0 +1,7 @@
+{
+    "autoload":{
+        "psr-4":{
+            "UZU_rs\\": "UZU_rs/"
+        }
+    }
+}
