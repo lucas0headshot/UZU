@@ -1,7 +1,7 @@
 {
     "autoload":{
         "psr-4":{
-            "UZU_rs\\": "UZU_rs/"
+            "UZU_LucasR_Marcos\\": "UZU_LucasR_Marcos/"
         }
     }
 }
