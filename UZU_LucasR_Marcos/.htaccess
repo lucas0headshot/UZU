@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} | -f
+RewriteCond %{SCRIPT_FILENAME} | -d
+RewriteRule ^(.*)$ index.php?ur1=$1 [QSA,L]
+
+Options - Indexes
