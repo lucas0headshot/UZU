@@ -8,7 +8,7 @@
             if(isset($_SESSION['login'])){
                 \UZU_LucasR_Marcos\Views\MainView::Render('Home'); //Renderizar Home
             }else{
-                \UZU_LucasR_Marcos\Views\MainView::Render('Registrar'); //Renderizar Criar Conta
+                \UZU_LucasR_Marcos\Views\MainView::Render('Login'); //Renderizar Criar Conta
             }
         }
     }
