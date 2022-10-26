@@ -9,7 +9,7 @@
     <link href="<?php echo INCLUDE_PATH_STATIC ?>Styles/Style.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Teste</h2>
-    <div class = "sidebar"></div>
+    <div class = "sidebar"></div> <!-- Barra no canto esquerdo-->
+    
 </body>
 </html>
