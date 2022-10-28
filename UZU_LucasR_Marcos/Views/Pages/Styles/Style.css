@@ -6,7 +6,7 @@
 }
 
 html, body{
-    background-color: #ffffff;
+    background-color: #f5eaf5;
     height: 100%;
 }
 
@@ -19,8 +19,9 @@ html, body{
 .form-container-login{
     transform: translate(-50%, -50%);
     position: absolute;
-    left: 40%;
+    left: 50%;
     top: 50%;
+    max-width: 1100px;
 }
 
 .form-container-login{
@@ -28,32 +29,45 @@ html, body{
 }
 
 .logo-login{
-    width: 40%;
+    width: 60%;
+    font-size: 19px;
+    padding: 5px;
 }
 
 .form-login{
-    background-color: #8b008b;
     width: 60%;
+    background-color: #ffffff;
     padding: 30px;
+    max-width: 500px;
 }
 
-.form-login input[type=text],
-.form-login input[type=password]{
+.form-login input[type= text],
+.form-login input[type= password]{
     width: 100%;
     height: 40px;
     padding-left: 10px;
-    box-shadow: 0px 3px 1px #D3D8E067;
-    border: 1px solid #ebebeb;
+    box-shadow: 0px 3px 1px #b171b1;
+    border: 1px solid #f5eaf5;
     margin: 10px 0;
 }
 
-.form-login input[type=submit]{
-    top: 512px;
-    left: 997px;
-    width: 515px;
-    height: 60px;
-    background: #444294 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 1px #2B2962;
+.form-login input[type= submit]{
+    width: 100%;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    background: #8b008b 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 1px #b171b1;
     border-radius: 10px;
-    opacity: 1;
+}
+
+.form-login a{
+    border: 2px solid #8b008b;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
 }

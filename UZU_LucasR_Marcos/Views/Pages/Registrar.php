@@ -17,16 +17,17 @@
     <div class="form-container-login">
         <div class="logo-login">
             <img src="<?php echo INCLUDE_PATH_STATIC ?>Images/Logo - Preto.png"> <!-- Logo Login -->
-            <p>Faça login e divirta-se com seus amigos!</p>
+            <p>Crie uma conta para divertir-se com seus amigos!</p>
         </div>
 
         <div class="form-login"> <!-- Formulário Login -->
+            <h2 style="text-align: center;">Crie sua conta!</h2>
             <form method="post">
+                <input type="text" placeholder="Seu nome" name="nome">
                 <input type="text" placeholder="E-mail ou Telefone" name="login">
                 <input type="password" placeholder="Senha" name="senha">
-                <input type="submit" name="acao" value="Logar!">
+                <input type="submit" name="acao" value="Criar Conta!">
             </form>
-            <p><a href="<?php echo INCLUDE_PATH ?>Registrar">Criar conta</a></p>
         </div>
     </div>
 

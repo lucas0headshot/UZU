@@ -17,7 +17,7 @@
 
             $loadName.= 'Controller';
             
-            if (file_exists($loadName. '.php')){ //Verificar arquivo atual
+            if (file_exists($loadName.'.php')){ //Verificar arquivo atual
                 $this->controller = new $loadName();
             }else{
                 require('Views\\Pages\\404.php'); //Erro 404 personalizado
@@ -27,8 +27,7 @@
             $this->controller = new $loadName();
 
         }
-        public function Run(){ 
-            //echo 'Motor aquecido e ligado! (Está rodando :D)'; //Teste
+        public function Run(){
             $this->setApp();
             $this->controller->index();
         }
