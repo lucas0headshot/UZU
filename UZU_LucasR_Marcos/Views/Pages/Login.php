@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Login na UZU -  Rede Social para Gamers</title> <!-- Título -->
+    <title>Logar na UZU</title> <!-- Título -->
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Fonte Open Sans -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
 
         <div class="form-login"> <!-- Formulário Login -->
             <form method="post">
-                <input type="text" placeholder="E-mail ou Telefone" name="login">
+                <input type="text" placeholder="E-mail" name="email">
                 <input type="password" placeholder="Senha" name="senha">
                 <input type="submit" name="acao" value="Logar!">
             </form>
