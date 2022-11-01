@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body{
+    background-color: #f5eaf5;
+    height: 100%;
+}
+
+section.main-feed{
+    display: flex;
+    height: 100%;
+
+}
+
+.sidebar{
+    background: #8b008b;
+    width: 347px;
+    padding: 20px 50px;
+}
+
+.sidebar.logo-sidebar{
+    max-width: 5px;   
+}
+
+.feed{
+    padding: 90px;
+    width: calc(100% - 347px);
+}
+
+.menu-sidebar{
+    text-align: left;
+    display: inline-block;
+}
+
+.menu-sidebar h4{
+    color: #000000;
+}
+
+.menu-sidebar a{
+    display: block;
+    margin-bottom: 8px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.menu-sidebar a:hover{
+    font-weight: bold;
+    color: #000000;
+}
+
+.feed-single-post{
+    padding: 30px;
+   border-radius: 10px;
+   background-color: #ffffff;
+}
+
+.feed-single-post-content{
+    margin: 10px 0;
+}
+
+.feed-single-post-content p{
+    color: #000000;
+    font-size: 15px;
+}
