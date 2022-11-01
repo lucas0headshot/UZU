@@ -22,9 +22,10 @@
 
         <div class="form-login"> <!-- Formulário Login -->
             <form method="post">
-                <input type="text" placeholder="E-mail" name="email">
-                <input type="password" placeholder="Senha" name="senha">
+                <input type="text" placeholder="E-mail" name="Email">
+                <input type="password" placeholder="Senha" name="Senha">
                 <input type="submit" name="acao" value="Logar!">
+                <input type="hidden" name="login">
             </form>
             <p><a href="<?php echo INCLUDE_PATH ?>Registrar">Criar conta</a></p>
         </div>

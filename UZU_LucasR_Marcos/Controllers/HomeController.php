@@ -7,6 +7,30 @@
             if(isset($_SESSION['login'])){
                 \UZU_LucasR_Marcos\Views\MainView::Render('Home'); //Renderizar Home
             }else{
+
+                if (isset($_POST['login'])){ //Ação login
+                    $login =  $_POST['Email'];
+                    $senha = $_POST['Senha'];
+
+                    $verifica = \UZU_LucasR_Marcos\SQL::connect()->prepare("Select * From Usuarios Where email = ?");
+                    $verifica->execute(array($login));
+
+                    if ($verifica->rowCount() == 0){ //Verificar Senha no Banco de Dados
+                        \UZU_LucasR_Marcos\Utilidades::alerta('E-mail não cadastrado!'); //Não existe
+                        \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                    }else{
+                        $dados = $verifica->fetch();
+                        $senhaBanco = $dados['Senha'];
+                        if (\UZU_LucasR_Marcos\Bcrypt::check($senha,$senhaBanco)){
+                            $_SESSION['login'] = $dados['Email']; //Login efetudado com sucesso(Senha condizente)
+                            \UZU_LucasR_Marcos\Utilidades::alerta('Bem-vindo a UZU!');
+                            \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                        }else{
+                            \UZU_LucasR_Marcos\Utilidades::alerta('Senha incorreta!');
+                            \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                        }
+                    }
+                }
                 \UZU_LucasR_Marcos\Views\MainView::Render('Login'); //Renderizar Login
             }
         }
