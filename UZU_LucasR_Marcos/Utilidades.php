@@ -4,8 +4,8 @@
     class Utilidades{
         
         public static function redirect($url){ //Redirecionar
-            echo '<script>window.location.hrer="'.$url.'"</script>';
-            die(); //Se ativado não redireciona pro $url
+            echo '<script>window.location.href="'.$url.'"</script>';
+            die();
         }
 
         public static function alerta($Mensagem){ //Mensagem - Alerta
