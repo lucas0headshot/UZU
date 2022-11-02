@@ -1,43 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home - UZU</title> <!-- Título -->
+    <title>Bem-vindo, <?php echo $_SESSION['Nome'];?></title> <!-- Título -->
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Fonte Open Sans -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="<?php echo INCLUDE_PATH_STATIC ?>Styles/Feed.css" rel="stylesheet">
 </head>
 <body>
     <section class="main-feed"> 
         <div class="sidebar"> <!-- Barra à esquerda -->
             <div class="logo-sidebar"> <!-- Logo sidebar-->
-                <img src="<?php echo INCLUDE_PATH_STATIC?>Images/Logo - Preto.png"> 
+                <img src="<?php echo INCLUDE_PATH_STATIC?>Images/Logo - Preto - Peq.png"> 
             </div>
             <br/>
             <div class="menu-sidebar">
                 <h4>Menu</h4>
                 <br/>
-                <a href="#">Feed</a>
-                <a href="#">Perfil</a>
-                <a href="#">Amigos</a>
+                <a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Feed</a>
+				<a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Perfil</a>
+				<a href="#"><i class="fa fa-users" aria-hidden="true"></i> Amigos</a>
+
+                <a href="?logout">Logout</a>
             </div>
         </div> <!-- Sidebar -->
 
         <div class="feed">
-            <div class="feed-single-post">
-                <div class="feed-single-post-author">
-                    <div class="img-single-post-author">
-                        <!-- Colocar imagem :D-->
-                    </div>
-                    <h3>Lucas</h3>
-                    <span>22:36 31/10/2022</span>
-                </div>
-                <div class="feed-single-post-content">
-                    <p>Teste, teste e mais testes...</p>
-                </div>
-            </div>
-        </div> <!-- Feed -->
+			<div class="feed-wraper">
+			<div class="feed-single-post">
+				<div class="feed-single-post-author">
+					<div class="img-single-post-author">
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					</div>
+					<div class="feed-single-post-author-info">
+						<h3>Teste</h3>
+						<p>21:35 01/11/2022</p>
+					</div>
+				</div>
+				<div class="feed-single-post-content">
+					<p>Teste, teste e mais testes...</p>
+				</div>
+			</div>
+		<div class="feed-single-post">
+				<div class="feed-single-post-author">
+					<div class="img-single-post-author">
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					</div>
+					<div class="feed-single-post-author-info">
+						<h3>Teste</h3>
+						<p>21:35 01/11/2022</p>
+					</div>
+				</div>
+				<div class="feed-single-post-content">
+					<p>Teste, teste e mais testes...</p>
+					<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/post-placeholder.png" />
+				</div>
+			</div>
+
+			<div class="feed-single-post">
+				<div class="feed-single-post-author">
+					<div class="img-single-post-author">
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					</div>
+					<div class="feed-single-post-author-info">
+						<h3>Teste</h3>
+						<p>21:35 01/11/2022</p>
+					</div>
+				</div>
+				<div class="feed-single-post-content">
+					<p>Teste, teste e mais testes...</p>
+				</div>
+			</div>
+			<div class="feed-single-post">
+				<div class="feed-single-post-author">
+					<div class="img-single-post-author">
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					</div>
+					<div class="feed-single-post-author-info">
+						<h3>Teste</h3>
+						<p>21:35 01/11/2022</p>
+					</div>
+				</div>
+				<div class="feed-single-post-content">
+					<p>Teste, teste e mais testes...</p>
+				</div>
+			</div>
+
+						<div class="feed-single-post">
+				<div class="feed-single-post-author">
+					<div class="img-single-post-author">
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					</div>
+					<div class="feed-single-post-author-info">
+						<h3>Teste</h3>
+						<p>21:35 01/11/2022</p>
+					</div>
+				</div>
+				<div class="feed-single-post-content">
+					<p>Teste, teste e mais testes...</p>
+				</div>
+			</div>
+
+						<div class="feed-single-post">
+				<div class="feed-single-post-author">
+					<div class="img-single-post-author">
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					</div>
+					<div class="feed-single-post-author-info">
+						<h3>Teste</h3>
+						<p>21:35 01/11/2022</p>
+					</div>
+				</div>
+				<div class="feed-single-post-content">
+					<p>Teste, teste e mais testes...</p>
+				</div>
+			</div>
+		</div>
+
+			<div class="friends-request-feed">
+				<h4>Solicitações de amizade</h4>
+				<div class="friend-request-single">
+					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					<div class="friend-request-single-info">
+						<h3>Testando da testado</h3>
+						<p><a href="">Aceitar</a>|<a href="">Recusar</a></p>
+					</div>
+				</div>
+				<div class="friend-request-single">
+					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					<div class="friend-request-single-info">
+						<h3>Testando da testado</h3>
+						<p><a href="">Aceitar</a>|<a href="">Recusar</a></p>
+					</div>
+				</div>
+				<div class="friend-request-single">
+					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+					<div class="friend-request-single-info">
+						<h3>Testando da testado</h3>
+						<p><a href="">Aceitar</a>|<a href="">Recusar</a></p>
+					</div>
+				</div>
+			</div>
+		</div> <!--feed-->
     </section>
     
 </body>

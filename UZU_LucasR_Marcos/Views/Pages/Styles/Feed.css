@@ -27,7 +27,9 @@ section.main-feed{
 }
 
 .feed{
-    padding: 90px;
+    overflow-y: auto;
+    display: flex;
+    padding: 30px;
     width: calc(100% - 347px);
 }
 
@@ -52,17 +54,89 @@ section.main-feed{
     color: #000000;
 }
 
+.feed-wraper{
+	width:70%;
+	padding:30px;
+}
+
+
 .feed-single-post{
-    padding: 30px;
-   border-radius: 10px;
-   background-color: #ffffff;
+	padding:30px 40px;
+	border-radius:20px;
+	margin-bottom: 20px;
+	border-radius:10px;
+	background-color: #ffffff;
 }
 
 .feed-single-post-content{
-    margin: 10px 0;
+    margin:10px 0;
 }
 
 .feed-single-post-content p{
-    color: #000000;
-    font-size: 15px;
+	font-size: 15px;
+}
+
+.feed-single-post-content img{
+	max-width: 100%;
+	margin:20px 0;
+}
+
+.friends-request-feed{
+	width:28%;
+	margin-left: 2%;
+	background-color: #ffffff;
+	padding:30px;
+	border-radius:10px;
+}
+
+.friend-request-single{
+	display: flex;
+	margin-bottom: 20px;
+	padding:10px 0;
+	border-bottom:1px solid #ccc;
+}
+
+.friend-request-single img{
+	width: 40px;
+	height: 40px;
+	border-radius:50%;
+}
+
+.friend-request-single-info{
+	padding:4px 10px;
+}
+
+.friend-request-single-info h3{
+	font-size: 15px;
+	opacity: 0.9;
+}
+
+.friend-request-single-info a{
+	font-size: 13px;
+	color: #8b008b;
+}
+
+.feed-single-post-author{
+	display: flex;
+}
+.feed-single-post-author img{
+	width:50px;
+	height: 50px;
+	border-radius:50%;
+}
+
+.img-single-post-author{
+	padding:0 10px;
+}
+
+
+.feed-single-post-author h3{
+	font-size: 17px;
+	width:100%;
+}
+
+.feed-single-post-author p{
+	font-size: 14px;
+	opacity: 0.8;
+	margin-top:3px;
 }

@@ -4,6 +4,14 @@
     class HomeController{
 
         public function index(){
+
+            if (isset($_GET['logout'])){
+                session_unset();
+                session_destroy();
+
+                \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+            }
+
             if(isset($_SESSION['login'])){
                 \UZU_LucasR_Marcos\Views\MainView::Render('Home'); //Renderizar Home
             }else{
@@ -23,6 +31,7 @@
                         $senhaBanco = $dados['Senha'];
                         if (\UZU_LucasR_Marcos\Bcrypt::check($senha,$senhaBanco)){
                             $_SESSION['login'] = $dados['Email']; //Login efetudado com sucesso(Senha condizente)
+                            $_SESSION['Nome'] = explode(' ', $dados['Nome'])[0];
                             \UZU_LucasR_Marcos\Utilidades::alerta('Bem-vindo a UZU!');
                             \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
                         }else{
