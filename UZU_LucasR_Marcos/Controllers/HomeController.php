@@ -31,6 +31,7 @@
                         $senhaBanco = $dados['Senha'];
                         if (\UZU_LucasR_Marcos\Bcrypt::check($senha,$senhaBanco)){
                             $_SESSION['login'] = $dados['Email']; //Login efetudado com sucesso(Senha condizente)
+                            $_SESSION['id'] = $dados['ID'];
                             $_SESSION['Nome'] = explode(' ', $dados['Nome'])[0];
                             \UZU_LucasR_Marcos\Utilidades::alerta('Bem-vindo a UZU!');
                             \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);

@@ -14,5 +14,45 @@
                 return false;
             }
         }
+
+        public static function listarComunidade(){
+            $pdo = \UZU_LucasR_Marcos\SQL::connect();
+
+            $comunidade  = $pdo->prepare("Select * From Usuarios");
+            $comunidade->execute();
+
+            return $comunidade->fetchAll();
+        }
+
+        public static function solicitarAmizade($idPara){
+            $pdo = \UZU_LucasR_Marcos\SQL::connect();
+
+            $verificaAmizade = $pdo->prepare("Select * From Amizades Where (Enviou = ? And Recebeu = ?) Or (Enviou = ? And Recebeu = ?)");
+            $verificaAmizade->execute(array($_SESSION['id'], $idPara, $idPara, $_SESSION['id']));
+
+            if ($verificaAmizade->rowCount() == 1){
+                return false;
+            }else{
+                $insertAmizade = $pdo->prepare("Insert Into Amizades Values(null, ?, ?, 0)");
+                if ($insertAmizade->execute(array($_SESSION['id'], $idPara))){
+                    return true;
+                }
+            }
+            
+            return true;
+        }
+        
+        public static function existePedidoAmizade($idPara){
+            $pdo = \UZU_LucasR_Marcos\SQL::connect();
+
+            $verificaAmizade = $pdo->prepare("Select * From Amizades Where (Enviou = ? And Recebeu = ?) Or (Enviou = ? And Recebeu = ?)");
+            $verificaAmizade->execute(array($_SESSION['id'], $idPara, $idPara, $_SESSION['id']));
+
+            if ($verificaAmizade->rowCount() == 1){
+                return false;
+            }else{
+                return true;
+            }
+        }
     }
 ?>
