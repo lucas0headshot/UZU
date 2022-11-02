@@ -21,15 +21,20 @@
 			<div class="container-comunidade">	<!-- Amigos -->
 					<h4>Amigos</h4>
 					<div class="container-comunidade-wraper">
+						<?php 
+							foreach(\UZU_LucasR_Marcos\Models\UsuariosModel::listarAmigos() as $keu=> $value){ ?>
 						<div class="container-comunidade-single">
 							<div class="img-comunidade-user-single">
 								<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/Avatar - Roxo.png" />
 							</div>
 							<div class="info-comunidade-user-single">
-								<h2>Teste</h2>
-								<p>teste@gmail.com</p>
+								<h2> <?php echo $value['Nome'];?> </h2>
+								<p> <?php echo $value['Email'];?> </p>
 							</div>
 						</div>
+
+						<?php } ?>
+
 					</div>
 				</div> <!-- Fim Amigos -->
 			<br/>

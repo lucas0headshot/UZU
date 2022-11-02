@@ -91,5 +91,29 @@
             }
         }
 
+        public static function listarAmigos(){
+            $pdo = \UZU_LucasR_Marcos\SQL::connect();
+            $amizades = $pdo->prepare("Select * From Amizades Where (Enviou = ? And Status = 1) Or (Recebeu = ? And Status = 1)");
+            $amizades->execute(array($_SESSION['id'], $_SESSION['id']));
+
+            $amizades = $amizades->fetchAll();
+            $amigosConfirmados = array();
+            foreach($amizades as $key=> $value){
+                if ($value['Enviou'] == $_SESSION['id']){
+                    $amigosConfirmados[] = $value['Recebeu'];
+                }else{
+                    $amigosConfirmados[] = $value['Enviou'];
+                }
+            }
+
+            $listaAmigos = array();
+            foreach($amigosConfirmados as $key=> $value){
+                $listaAmigos[$key]['Nome'] = self::getUsuarioByID($value)['Nome'];
+                $listaAmigos[$key]['Email'] = self::getUsuarioByID($value)['Email'];
+            }
+
+            return $listaAmigos;
+        }
+
     }
 ?>
