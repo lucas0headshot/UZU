@@ -6,7 +6,12 @@
         public static function postFeed($post){
             $pdo = \UZU_LucasR_Marcos\SQL::connect();
             $post = strip_tags($post);
-            //Fazer link de imagem através da tag
+            
+            if (preg_match('/\[imagem/', $post)){
+                $post = preg_replace('/(.*?)\[imagem=(.*?)\]/', '<p>$1</p><img scr="$2" />', $post);
+            }else{
+                $post = '<p>'.$post.'</p>';
+            }
 
             $postFeed = $pdo->prepare("Insert Into Posts Values (null, ?, ?, ?)"); //Inserir no Posts (ID, Usuario_ID, Post, Data e hora)
             $postFeed->execute(array($_SESSION['id'], $post, date('Y-m-d H:i:s', time())));

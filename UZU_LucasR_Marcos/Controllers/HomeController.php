@@ -39,7 +39,7 @@
                 
                     \UZU_LucasR_Marcos\Models\HomeModel::postFeed($_POST['post_content']);
                     \UZU_LucasR_Marcos\Utilidades::alerta('Post realizado!');
-                    \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                    //\UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
                 }
 
                 \UZU_LucasR_Marcos\Views\MainView::Render('Home'); //Renderizar Home
