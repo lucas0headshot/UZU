@@ -18,8 +18,8 @@ section.main-feed{
 
 .sidebar{
     background: #8b008b;
-    width: 347px;
-    padding: 20px 50px;
+    width: 247px;
+    padding: 20px 20px;
 }
 
 .sidebar.logo-sidebar{
@@ -29,8 +29,9 @@ section.main-feed{
 .feed{
     overflow-y: auto;
     display: flex;
+    flex-wrap: wrap;
     padding: 30px;
-    width: calc(100% - 347px);
+    width: calc(100% - 247px);
 }
 
 .menu-sidebar{
