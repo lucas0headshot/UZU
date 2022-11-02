@@ -17,6 +17,13 @@
 
         <div class="feed">
 			<div class="feed-wraper">
+			<div class="feed-form"> <!-- Feed Form -->
+				<form method="post">
+					<textarea required="" name="post_content" placeholder="No que você está pensando?"></textarea>
+					<input type="hidden" name="post_feed">
+					<input type="submit" value="Postar!">
+				</form>
+			</div>	<!-- Fim Feed Form -->
 			<div class="feed-single-post">
 				<div class="feed-single-post-author">
 					<div class="img-single-post-author">
