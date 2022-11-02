@@ -13,6 +13,23 @@
             }
 
             if(isset($_SESSION['login'])){
+
+                if (isset($_GET['recusarAmizade'])){
+                    $idEnviou = (int)  $_GET['recusarAmizade'];
+                    \UZU_LucasR_Marcos\Models\UsuariosModel::atualizarPedidoAmizade($idEnviou,0);
+                    \UZU_LucasR_Marcos\Utilidades::alerta('Amizade recusada...');
+                    \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                }else if (isset($_GET['aceitarAmizade'])){
+                    $idEnviou = (int)  $_GET['aceitarAmizade'];
+                    if (\UZU_LucasR_Marcos\Models\UsuariosModel::atualizarPedidoAmizade($idEnviou,1)){
+                        \UZU_LucasR_Marcos\Utilidades::alerta('Amizade aceita!');
+                        \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                    }else{
+                        \UZU_LucasR_Marcos\Utilidades::alerta('Ops... ocorreu um erro, tente novamente mais tarde');
+                        \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                    }
+                }
+
                 \UZU_LucasR_Marcos\Views\MainView::Render('Home'); //Renderizar Home
             }else{
 

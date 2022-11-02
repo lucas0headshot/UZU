@@ -109,27 +109,23 @@
 
 			<div class="friends-request-feed">
 				<h4>Solicitações de amizade</h4>
+
+				<?php
+					foreach(\UZU_LucasR_Marcos\Models\UsuariosModel::listarAmizadesPendentes() as $key=> $value){
+					$usuarioInfo = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioByID($value['Enviou']);
+				?>
+
 				<div class="friend-request-single">
 					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
 					<div class="friend-request-single-info">
-						<h3>Testando da testado</h3>
-						<p><a href="">Aceitar</a>|<a href="">Recusar</a></p>
+						<h3> <?php echo $usuarioInfo['Nome']?> </h3>
+						<p><a href="<?php echo INCLUDE_PATH?>?aceitarAmizade=<?php echo $usuarioInfo['ID']?>">Aceitar</a>|
+						<a href="<?php echo INCLUDE_PATH?>?recusarAmizade=<?php echo $usuarioInfo['ID']?>">Recusar</a></p>
 					</div>
 				</div>
-				<div class="friend-request-single">
-					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
-					<div class="friend-request-single-info">
-						<h3>Testando da testado</h3>
-						<p><a href="">Aceitar</a>|<a href="">Recusar</a></p>
-					</div>
-				</div>
-				<div class="friend-request-single">
-					<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
-					<div class="friend-request-single-info">
-						<h3>Testando da testado</h3>
-						<p><a href="">Aceitar</a>|<a href="">Recusar</a></p>
-					</div>
-				</div>
+
+				<?php } ?>
+
 			</div>
 		</div> <!--feed-->
     </section>

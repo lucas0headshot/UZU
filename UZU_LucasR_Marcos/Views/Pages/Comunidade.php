@@ -42,6 +42,14 @@
 							$comunidade = \UZU_LucasR_Marcos\Models\UsuariosModel::listarComunidade();
 
 							foreach ($comunidade as $key => $value){
+								
+								$pdo = \UZU_LucasR_Marcos\SQL::connect();
+								$verificaAmizade = $pdo->prepare("Select * From Amizades Where (Enviou = ? And Recebeu = ? And Status = 1) Or (Enviou = ? And Recebeu = ? And Status = 1)");
+								$verificaAmizade->execute(array($value['ID'], $_SESSION['id'], $_SESSION['id'], $value['ID']));
+
+								if ($verificaAmizade->rowCount() == 1){
+									continue; //Amizade existente, passar pro próximo e não listar
+								}
 
 								if ($value['ID'] == $_SESSION['id']){
 									continue;
