@@ -5,14 +5,14 @@
 
         public function index(){
 
-            if (isset($_GET['logout'])){
+            if (isset($_GET['logout'])){ //Verificar se Usuário optou por Logout
                 session_unset();
                 session_destroy();
 
-                \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH); //Redirecionar pro Login
             }
 
-            if(isset($_SESSION['login'])){
+            if(isset($_SESSION['login'])){ //Verificar se está logado
 
                 if (isset($_GET['recusarAmizade'])){
                     $idEnviou = (int)  $_GET['recusarAmizade'];
@@ -62,6 +62,7 @@
                             $_SESSION['login'] = $dados['Email']; //Login efetudado com sucesso(Senha condizente)
                             $_SESSION['id'] = $dados['ID'];
                             $_SESSION['Nome'] = explode(' ', $dados['Nome'])[0];
+                            $_SESSION['Img'] = $dados['Img'];
                             \UZU_LucasR_Marcos\Utilidades::alerta('Bem-vindo a UZU!');
                             \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
                         }else{

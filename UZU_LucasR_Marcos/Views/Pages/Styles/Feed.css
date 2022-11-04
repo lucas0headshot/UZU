@@ -165,3 +165,37 @@ section.main-feed{
 	margin-bottom: 20px;
 	font-size: 15px;
 }
+
+.editar-perfil{
+	background-color: white;
+	padding: 20px;
+	width: 100%;
+
+}
+
+.editar-perfil input[type= text],
+.editar-perfil input[type = password]{
+	width: 100%;
+	height: 40px;
+	padding-left: 10px;
+	border: 1px solid #b171b1;
+	margin-bottom: 10px;
+}
+
+.editar-perfil input[type= file]{
+	display: block;
+	margin: 10px 0;
+	border: 2px dashed #b171b1;
+	width: 100%;
+	padding: 10px;
+
+}
+
+.editar-perfil input[type= submit]{
+	background-color: #8b008b;
+	width: 120px;
+	height: 30px;
+	border: 0;
+	color: white;
+	cursor: pointer;
+}

@@ -46,6 +46,7 @@
 				$listaAmigos[$key]['ID'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['ID'];
 				$listaAmigos[$key]['Nome'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Nome'];
 				$listaAmigos[$key]['Email'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Email'];
+                $listaAmigos[$key]['Img'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Img'];
 				$listaAmigos[$key]['Ultimo_Post'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Ultimo_Post'];
 			}
 
@@ -67,6 +68,7 @@
 					$ultimoPost = $ultimoPost->fetch();
 					$posts[$key]['Nome'] = $value['Nome'];
 					$posts[$key]['Data'] = $ultimoPost['Data'];
+                    $posts[$key]['Img'] = $value['Img'];
 					$posts[$key]['Conteudo'] = $ultimoPost['Post'];
 				}
 			}

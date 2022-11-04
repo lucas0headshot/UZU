@@ -35,15 +35,34 @@
 			<div class="feed-single-post"> <!-- Post -->
 				<div class="feed-single-post-author">
 					<div class="img-single-post-author">
+
+					<?php
+						if (!isset($value['me']) && $value['Img'] == ''){
+					?>
 						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
+
+					<?php }else if (!isset($value['me'])){ ?>
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/<?php echo $value['Img'] ?>" />
+					<?php } ?>
+
+					<?php
+						if(isset($value['me']) && $_SESSION['Img'] == ''){
+					?>
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/Avatar - Roxo.png" />
+
+					<?php }else if (isset($value['me'])){ ?>
+						<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/<?php echo $_SESSION['Img'] ?>" />
+					<?php } ?>
+
 					</div>
 					<div class="feed-single-post-author-info">
 						
 						<?php
 							if (isset($value['me'])){ ?>
+							<h3><?php echo $_SESSION['Nome']?> (Eu)</h3>
 						<?php }else{ ?>
 						
-							<h3><?php echo $_SESSION['Nome']?></h3>
+							<h3><?php echo $value['Nome']?></h3>
 
 						<?php } ?>
 
