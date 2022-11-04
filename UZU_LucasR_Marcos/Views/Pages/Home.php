@@ -24,95 +24,40 @@
 					<input type="submit" value="Postar!">
 				</form>
 			</div>	<!-- Fim Feed Form -->
-			<div class="feed-single-post">
-				<div class="feed-single-post-author">
-					<div class="img-single-post-author">
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
-					</div>
-					<div class="feed-single-post-author-info">
-						<h3>Teste</h3>
-						<p>21:35 01/11/2022</p>
-					</div>
-				</div>
-				<div class="feed-single-post-content">
-					<p>Teste, teste e mais testes...</p>
-				</div>
-			</div>
-		<div class="feed-single-post">
-				<div class="feed-single-post-author">
-					<div class="img-single-post-author">
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
-					</div>
-					<div class="feed-single-post-author-info">
-						<h3>Teste</h3>
-						<p>21:35 01/11/2022</p>
-					</div>
-				</div>
-				<div class="feed-single-post-content">
-					<p>Teste, teste e mais testes...</p>
-					<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/post-placeholder.png" />
-				</div>
-			</div>
+			
+			<?php
+				$retrievePosts = \UZU_LucasR_Marcos\Models\HomeModel::retrieveFriendsPosts();
 
-			<div class="feed-single-post">
-				<div class="feed-single-post-author">
-					<div class="img-single-post-author">
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
-					</div>
-					<div class="feed-single-post-author-info">
-						<h3>Teste</h3>
-						<p>21:35 01/11/2022</p>
-					</div>
-				</div>
-				<div class="feed-single-post-content">
-					<p>Teste, teste e mais testes...</p>
-				</div>
-			</div>
-			<div class="feed-single-post">
-				<div class="feed-single-post-author">
-					<div class="img-single-post-author">
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
-					</div>
-					<div class="feed-single-post-author-info">
-						<h3>Teste</h3>
-						<p>21:35 01/11/2022</p>
-					</div>
-				</div>
-				<div class="feed-single-post-content">
-					<p>Teste, teste e mais testes...</p>
-				</div>
-			</div>
+				foreach ($retrievePosts as $key=> $value){
 
-						<div class="feed-single-post">
-				<div class="feed-single-post-author">
-					<div class="img-single-post-author">
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
-					</div>
-					<div class="feed-single-post-author-info">
-						<h3>Teste</h3>
-						<p>21:35 01/11/2022</p>
-					</div>
-				</div>
-				<div class="feed-single-post-content">
-					<p>Teste, teste e mais testes...</p>
-				</div>
-			</div>
+			?>
 
-						<div class="feed-single-post">
+			<div class="feed-single-post"> <!-- Post -->
 				<div class="feed-single-post-author">
 					<div class="img-single-post-author">
 						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
 					</div>
 					<div class="feed-single-post-author-info">
-						<h3>Teste</h3>
-						<p>21:35 01/11/2022</p>
+						
+						<?php
+							if (isset($value['me'])){ ?>
+						<?php }else{ ?>
+						
+							<h3><?php echo $_SESSION['Nome']?></h3>
+
+						<?php } ?>
+
+						<p><?php echo date('d/m/Y H:i:s', strtotime($value['Data']))?></p>
 					</div>
 				</div>
 				<div class="feed-single-post-content">
-					<p>Teste, teste e mais testes...</p>
+					<?php echo $value['Conteudo']?>
 				</div>
-			</div>
-		</div>
+			</div> <!-- Fim Post -->
+
+			<?php } ?>
+
+		</div> 
 
 			<div class="friends-request-feed">
 				<h4>Solicitações de amizade</h4>

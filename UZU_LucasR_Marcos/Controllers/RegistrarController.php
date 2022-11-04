@@ -21,7 +21,7 @@
                     \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH.'Registrar');
                 }else{
                     $senha = \UZU_LucasR_Marcos\Bcrypt::hash($senha); //Criptografar senha
-                    $registro = \UZU_LucasR_Marcos\SQL::connect()->prepare("INSERT INTO usuarios VALUES (null, ?, ?, ?)"); //Insert anti-Injection
+                    $registro = \UZU_LucasR_Marcos\SQL::connect()->prepare("Insert Into Usuarios VALUES (null, ?, ?, ?, '0000-00-00 00:00:00')"); //Insert anti-Injection
                     $registro->execute(array($nome, $email, $senha));
 
                     \UZU_LucasR_Marcos\Utilidades::alerta('Registrado com sucesso!');
