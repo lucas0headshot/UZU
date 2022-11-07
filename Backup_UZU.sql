@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 05-Nov-2022 às 14:39
+-- Tempo de geração: 07-Nov-2022 às 22:17
 -- Versão do servidor: 8.0.27
 -- versão do PHP: 7.4.26
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `Post` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Data` datetime NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `posts`
@@ -71,7 +71,10 @@ INSERT INTO `posts` (`ID`, `Usuario_ID`, `Post`, `Data`) VALUES
 (30, 7, '<p>Hmmmmmmmmmmmmmm</p>', '2022-11-04 19:39:35'),
 (29, 11, '<p>Hm</p>', '2022-11-04 19:39:28'),
 (28, 10, '<p>Aoba</p>', '2022-11-04 19:39:15'),
-(27, 8, '<p>A</p>', '2022-11-04 19:38:59');
+(27, 8, '<p>A</p>', '2022-11-04 19:38:59'),
+(31, 8, '<p>Teste</p>', '2022-11-07 17:29:02'),
+(32, 8, '<p>A</p>', '2022-11-07 17:30:30'),
+(33, 7, '<p>Hmmm</p>', '2022-11-07 17:49:47');
 
 -- --------------------------------------------------------
 
@@ -96,8 +99,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`ID`, `Nome`, `Email`, `Senha`, `Ultimo_Post`, `Img`) VALUES
 (9, 'Guilherme', 'teste1@gmail.com', '$2a$08$MjAzOTkwOTg3NjYzNjFlYecBdxaoqM9fbrboCViW7uhQehEclqwSO', '0000-00-00 00:00:00', ''),
-(8, 'Teste', 'teste@gmail.com', '$2a$08$MTI5MTg4NzUyODYzNjA2ZOOI5oCutt87buHODCR7toiOYNLVuTHSS', '2022-11-04 19:38:59', ''),
-(7, 'Lucas', 'lucas0headshot@gmail.com', '$2a$08$MTI4ODA5Mjc2NjYzNjA2ZOsq0MnxzFZXFht2luKnJQoOYti4xo3Uy', '2022-11-04 19:39:35', ''),
+(8, 'Teste', 'teste@gmail.com', '$2a$08$MTc0MjA0OTg0MDYzNjk3MeCcpLZNCqulpeo9/JnWwtWPDU/Ez6vTe', '2022-11-07 17:30:30', '63696d6b0cdc0.png'),
+(7, 'Lucas', 'lucas0headshot@gmail.com', '$2a$08$MTI4ODA5Mjc2NjYzNjA2ZOsq0MnxzFZXFht2luKnJQoOYti4xo3Uy', '2022-11-07 17:49:47', '6369703784796.jpg'),
 (10, 'Marcos', 'teste3@gmail.com', '$2a$08$NDE5NzUwODI2NjM2MWVlYOBcKIhrOPYN36Buyz8HexAd2s4XcX6S6', '2022-11-04 19:39:15', ''),
 (11, 'Pietro', 'pietro0headshot@gmail.com', '$2a$08$MjUzMDI0MTEzNjM2NTdhMeC7tFnijS5.C9ISXvLZu8Y2dzb6o6rGm', '2022-11-04 19:39:28', '');
 COMMIT;

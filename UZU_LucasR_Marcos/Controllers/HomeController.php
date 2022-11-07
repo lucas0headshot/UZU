@@ -30,7 +30,7 @@
                     }
                 }
 
-                if (isset($_POST['post_feed'])){//Existe postagem?
+                if (isset($_POST['post_feed'])){ //Existe postagem?
                     
                     if ($_POST['post_content'] == ''){
                         \UZU_LucasR_Marcos\Utilidades::alerta('Seu post está vazio...');

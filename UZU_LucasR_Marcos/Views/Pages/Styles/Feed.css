@@ -120,6 +120,7 @@ section.main-feed{
 .feed-single-post-author{
 	display: flex;
 }
+
 .feed-single-post-author img{
 	width:50px;
 	height: 50px;

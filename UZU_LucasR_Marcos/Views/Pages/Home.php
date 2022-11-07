@@ -61,9 +61,7 @@
 							if (isset($value['me'])){ ?>
 							<h3><?php echo $_SESSION['Nome']?> (Eu)</h3>
 						<?php }else{ ?>
-						
 							<h3><?php echo $value['Nome']?></h3>
-
 						<?php } ?>
 
 						<p><?php echo date('d/m/Y H:i:s', strtotime($value['Data']))?></p>

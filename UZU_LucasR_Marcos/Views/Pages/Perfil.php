@@ -17,7 +17,7 @@
 
         <div class="feed">
             <div class="editar-perfil">
-                <h2>Editando perfil</h2>
+                <h2>Editar perfil</h2>
                 <br/>
                 <?php 
                     if (isset($_SESSION['Img']) && $_SESSION['Img'] == 'Img'){
