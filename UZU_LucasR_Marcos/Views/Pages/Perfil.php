@@ -21,16 +21,17 @@
                 <br/>
                 <?php 
                     if (isset($_SESSION['Img']) && $_SESSION['Img'] == 'Img'){
-                        echo '<img src="'.INCLUDE_PATH_STATIC.'Images/Avatar - Roxo.png" />';
+                        echo '<img style="max-widht: 400px; max-widht: 100%;" src="'.INCLUDE_PATH_STATIC.'Images/Avatar - Roxo.png" />';
                     }else{
-                        echo '<img src="'.INCLUDE_PATH_STATIC.'Images/'.$_SESSION['Img'].'" />';
+                        echo '<img style="max-widht: 400px; max-widht: 100%;%;" src="'.INCLUDE_PATH.'Uploads/'.$_SESSION['Img'].'" />';
                     }
                 ?>
                 <br/>
-                <form>
+                <form method="POST" enctype="multipart/form-data">
                     <input type="text" name="Nome" value="<?php echo $_SESSION['Nome']?>">
                     <input type="password" name="Senha" placeholder="Nova senha"">
                     <input type="file" name="file">
+                    <input type="hidden" name="atualizar" value="atualizar">
                     <input type="submit" name="acao" value="Salvar!">
                 </form>
             </div>

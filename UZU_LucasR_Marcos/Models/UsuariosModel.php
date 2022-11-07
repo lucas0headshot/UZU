@@ -110,6 +110,7 @@
             foreach($amigosConfirmados as $key=> $value){
                 $listaAmigos[$key]['Nome'] = self::getUsuarioByID($value)['Nome'];
                 $listaAmigos[$key]['Email'] = self::getUsuarioByID($value)['Email'];
+                $listaAmigos[$key]['Img'] = self::getUsuarioByID($value)['Img'];
             }
 
             return $listaAmigos;

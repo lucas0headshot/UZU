@@ -25,7 +25,14 @@
 							foreach(\UZU_LucasR_Marcos\Models\UsuariosModel::listarAmigos() as $keu=> $value){ ?>
 						<div class="container-comunidade-single">
 							<div class="img-comunidade-user-single">
-								<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/Avatar - Roxo.png" />
+								<?php
+									if ($value['Img'] == ''){
+								?>
+									<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/Avatar - Roxo.png" />
+
+								<?php }else{ ?>
+									<img src="<?php echo INCLUDE_PATH ?>Uploads/<?php echo $value['Img'] ?>" />
+								<?php }?>
 							</div>
 							<div class="info-comunidade-user-single">
 								<h2> <?php echo $value['Nome'];?> </h2>

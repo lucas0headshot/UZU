@@ -42,7 +42,7 @@
 						<img src="<?php echo INCLUDE_PATH_STATIC ?>images/Avatar - Roxo.png" />
 
 					<?php }else if (!isset($value['me'])){ ?>
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/<?php echo $value['Img'] ?>" />
+						<img src="<?php echo INCLUDE_PATH ?>Uploads/<?php echo $value['Img'] ?>" />
 					<?php } ?>
 
 					<?php
@@ -51,7 +51,7 @@
 						<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/Avatar - Roxo.png" />
 
 					<?php }else if (isset($value['me'])){ ?>
-						<img src="<?php echo INCLUDE_PATH_STATIC ?>Images/<?php echo $_SESSION['Img'] ?>" />
+						<img src="<?php echo INCLUDE_PATH ?>Uploads/<?php echo $_SESSION['Img'] ?>" />
 					<?php } ?>
 
 					</div>
