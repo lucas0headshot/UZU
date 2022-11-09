@@ -12,7 +12,7 @@
                     $nome = strip_tags($_POST['Nome']); //Não está atualizando (Fica vazio)
                     $senha = $_POST['Senha'];
 
-                    if ($nome = '' || strlen($nome) < 2){ //Se Nome for vazio ou menor que 3 caracteres
+                    if ($nome == '' || strlen($nome) < 2){ //Se Nome for vazio ou menor que 3 caracteres
                         \UZU_LucasR_Marcos\Utilidades::alerta('Nome inválido!');
                         \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH.'Perfil');
                     }
@@ -28,6 +28,7 @@
                         $_SESSION['Nome'] = $nome;
                     }
 
+
                     if ($_FILES['file']['tmp_name'] != ''){ //Verificar se há arquivo para upload
                         $file = $_FILES['file'];
                         $fileExt = explode('.', $file['name']);
@@ -42,7 +43,6 @@
                                 $_SESSION['Img'] = $uniqid;
                                 \UZU_LucasR_Marcos\Utilidades::alerta('Perfil e foto atualizadas!');
                                 \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH.'Perfil');
-                               
                             }else{
                                 \UZU_LucasR_Marcos\Utilidades::alerta('Imagem incompatível!');
                                 \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH.'Perfil');

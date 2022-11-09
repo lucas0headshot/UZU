@@ -27,8 +27,10 @@
                     }
                 ?>
                 <br/>
-                <form method="POST" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data">
+                    <h2>Nome:</h2>
                     <input type="text" name="Nome" value="<?php echo $_SESSION['Nome']?>">
+                    <h2>Senha:</h2>
                     <input type="password" name="Senha" placeholder="Nova senha"">
                     <input type="file" name="file">
                     <input type="hidden" name="atualizar" value="atualizar">

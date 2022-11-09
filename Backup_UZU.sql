@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Usuario_ID` int NOT NULL,
-  `Post` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Post` text  NOT NULL,
   `Data` datetime NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -85,11 +85,11 @@ INSERT INTO `posts` (`ID`, `Usuario_ID`, `Post`, `Data`) VALUES
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `Nome` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Senha` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Nome` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Senha` text  NOT NULL,
   `Ultimo_Post` datetime NOT NULL,
-  `Img` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Img` text  NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
