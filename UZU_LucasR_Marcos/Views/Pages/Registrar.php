@@ -24,11 +24,14 @@
             <h2 style="text-align: center;">Crie sua conta!</h2>
             <form method="post">
                 <input type="text" placeholder="Seu nome" name="nome">
-                <input type="text" placeholder="E-mail" name="email">
-                <input type="password" placeholder="Senha" name="senha">
+                <input type="text" placeholder="Seu uzer" name="usuario">
+                <input type="text" placeholder="Seu e-mail" name="email">
+                <input type="password" placeholder="Sua senha" name="senha">
+                <input type="password" placeholder="Repita sua senha" name="senhaRepetida">
                 <input type="submit" name="acao" value="Criar Conta!">
                 <input type="hidden" name="registrar" value="registrar">
             </form>
+            <p><a href="<?php echo INCLUDE_PATH ?>">Voltar</a></p>
         </div>
     </div>
 

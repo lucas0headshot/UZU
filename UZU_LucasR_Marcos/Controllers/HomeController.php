@@ -18,12 +18,12 @@
 
                 if (isset($_GET['recusarAmizade'])){
                     $idEnviou = (int)  $_GET['recusarAmizade'];
-                    \UZU_LucasR_Marcos\Models\UsuariosModel::atualizarPedidoAmizade($idEnviou,0);
+                    \UZU_LucasR_Marcos\Models\UsuariosModel::atualizarPedidoAmizade($idEnviou, 0);
                     \UZU_LucasR_Marcos\Utilidades::alerta('Amizade recusada...');
                     \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
                 }else if (isset($_GET['aceitarAmizade'])){
                     $idEnviou = (int)  $_GET['aceitarAmizade'];
-                    if (\UZU_LucasR_Marcos\Models\UsuariosModel::atualizarPedidoAmizade($idEnviou,1)){
+                    if (\UZU_LucasR_Marcos\Models\UsuariosModel::atualizarPedidoAmizade($idEnviou, 1)){
                         \UZU_LucasR_Marcos\Utilidades::alerta('Amizade aceita!');
                         \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
                     }else{
@@ -60,10 +60,11 @@
                     }else{
                         $dados = $verifica->fetch();
                         $senhaBanco = $dados['Senha'];
-                        if (\UZU_LucasR_Marcos\Bcrypt::check($senha,$senhaBanco)){
+                        if (\UZU_LucasR_Marcos\Bcrypt::check($senha, $senhaBanco)){
                             $_SESSION['login'] = $dados['Email']; //Login efetudado com sucesso(Senha condizente)
                             $_SESSION['id'] = $dados['ID'];
                             $_SESSION['Nome'] = explode(' ', $dados['Nome'])[0];
+                            $_SESSION['Uzer'] = $dados['Uzer'];
                             $_SESSION['Img'] = $dados['Img'];
                             \UZU_LucasR_Marcos\Utilidades::alerta('Bem-vindo a UZU!');
                             \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);

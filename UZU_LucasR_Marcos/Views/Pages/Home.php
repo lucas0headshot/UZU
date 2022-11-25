@@ -58,12 +58,15 @@
 					<div class="feed-single-post-author-info">
 						
 						<?php
-							if (isset($value['me'])){ ?>
-							<h3><?php echo $_SESSION['Nome']?> (Eu)</h3>
-						<?php }else{ ?>
-							<h3><?php echo $value['Nome']?></h3>
+							if (isset($value['me']) and ($value['Uzer'] == '')){ ?>
+								<h3><?php echo $_SESSION['Nome']?> (Eu)</h3>
+						<?php }else if (isset($value['me']) and ($value['Uzer'] != '')){ ?>
+								<h3><?php echo $_SESSION['Uzer']?></h3>
+						<?php }else if ($value['Uzer'] == ''){ ?>
+								<h3><?php echo $value['Nome']?></h3>
+						<?php }else if ($value['Uzer'] != ''){ ?>
+								<h3><?php echo $value['Uzer']?></h3>
 						<?php } ?>
-
 						<p><?php echo date('d/m/Y H:i:s', strtotime($value['Data']))?></p> <a value="<?php $value['ID']?>" href="<?php echo INCLUDE_PATH?>verPerfil?verPerfil">Ver Perfil</a>
 					</div>
 				</div>

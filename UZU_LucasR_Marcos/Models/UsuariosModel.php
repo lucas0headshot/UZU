@@ -3,12 +3,24 @@
 
     class UsuariosModel{
 
-        public static function emailExists($email){
+        public static function emailExiste($email){
             $pdo = \UZU_LucasR_Marcos\SQL::connect();
-            $verificar = $pdo->prepare("Select email From usuarios Where email = ?"); //Procurar Usuário com mesmo E-mail
+            $verificar = $pdo->prepare("Select Email From usuarios Where email = ?"); //Procurar Usuário com mesmo E-mail
             $verificar->execute(array($email));
 
             if ($verificar->rowCount() == 1){ //Verificar existência E-mail (Se existir)
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        public static function usuarioExiste($usuario){
+            $pdo = \UZU_LucasR_Marcos\SQL::connect();
+            $verificar = $pdo->prepare("Select Uzer From usuarios Where Uzer = ?"); //Procurar Usuário com mesmo Uzer
+            $verificar->execute(array($usuario));
+
+            if ($verificar->rowCount() == 1){ //Verificar existência Usuario (Se existir)
                 return true;
             }else{
                 return false;
