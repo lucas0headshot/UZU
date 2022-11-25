@@ -5,6 +5,8 @@
 
         public function index(){
 
+            echo 'RegistrarController';
+
             if (isset($_POST['registrar'])){
                 $nome = $_POST['nome'];
                 $email = $_POST['email'];

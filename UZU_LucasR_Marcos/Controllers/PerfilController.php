@@ -5,6 +5,8 @@
 
         public function index(){
 
+            echo 'PerfilController';
+
             if(isset($_SESSION['login'])){ //Verificar se está logado
 
                 if (isset($_POST['atualizar'])){

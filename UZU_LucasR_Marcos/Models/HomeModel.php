@@ -70,6 +70,7 @@
 					$posts[$key]['Data'] = $ultimoPost['Data'];
                     $posts[$key]['Img'] = $value['Img'];
 					$posts[$key]['Conteudo'] = $ultimoPost['Post'];
+					$posts[$key]['ID'] = $ultimoPost['ID'];
 				}
 			}
 			$me = $pdo->prepare("Select * From Usuarios Where ID = $_SESSION[id]");

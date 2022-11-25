@@ -5,6 +5,8 @@
 
         public function index(){
 
+            echo 'HomeController';
+
             if (isset($_GET['logout'])){ //Verificar se Usuário optou por Logout
                 session_unset();
                 session_destroy();

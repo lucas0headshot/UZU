@@ -5,6 +5,8 @@
 
         public function index(){
 
+            echo 'ComunidadeController';
+
             if(isset($_SESSION['login'])){
 
                 if (isset($_GET['solicitarAmizade'])){

@@ -64,7 +64,7 @@
 							<h3><?php echo $value['Nome']?></h3>
 						<?php } ?>
 
-						<p><?php echo date('d/m/Y H:i:s', strtotime($value['Data']))?></p>
+						<p><?php echo date('d/m/Y H:i:s', strtotime($value['Data']))?></p> <a value="<?php $value['ID']?>" href="<?php echo INCLUDE_PATH?>verPerfil?verPerfil">Ver Perfil</a>
 					</div>
 				</div>
 				<div class="feed-single-post-content">
