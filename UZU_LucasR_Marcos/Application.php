@@ -12,7 +12,7 @@
             if ($url[0] == ''){ //Se estiver vazio
                 $loadName.= 'Home';
             }else{
-                $loadName.= ucfirst(strtolower($url[0]));
+                $loadName.= (($url[0]));
             }
 
             $loadName.= 'Controller';

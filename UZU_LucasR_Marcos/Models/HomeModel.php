@@ -45,7 +45,6 @@
 
 				$listaAmigos[$key]['ID'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['ID'];
 				$listaAmigos[$key]['Nome'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Nome'];
-				$listaAmigos[$key]['Uzer'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Uzer'];
 				$listaAmigos[$key]['Email'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Email'];
                 $listaAmigos[$key]['Img'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Img'];
 				$listaAmigos[$key]['Ultimo_Post'] = \UZU_LucasR_Marcos\Models\UsuariosModel::getUsuarioById($value)['Ultimo_Post'];

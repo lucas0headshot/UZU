@@ -64,7 +64,6 @@
                             $_SESSION['login'] = $dados['Email']; //Login efetudado com sucesso(Senha condizente)
                             $_SESSION['id'] = $dados['ID'];
                             $_SESSION['Nome'] = explode(' ', $dados['Nome'])[0];
-                            $_SESSION['Uzer'] = $dados['Uzer'];
                             $_SESSION['Img'] = $dados['Img'];
                             \UZU_LucasR_Marcos\Utilidades::alerta('Bem-vindo a UZU!');
                             \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);

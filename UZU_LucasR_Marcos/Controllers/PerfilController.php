@@ -9,9 +9,27 @@
 
             if(isset($_SESSION['login'])){ //Verificar se está logado
 
+                if (isset($_POST['excluir'])){ //Excluir conta
+                    $ID = (int) $_SESSION['id'];
+                    var_dump($ID);
+
+                    if ($ID == $_SESSION['id']){ //Se o ID for igual ao da Session
+                        $pdo = \UZU_LucasR_Marcos\SQL::connect();
+                        $excluir = $pdo->prepare("Delete from usuarios where ID = ?");
+                        $excluir->execute(array($ID));
+                        session_unset();
+                        session_destroy();
+                        \UZU_LucasR_Marcos\Utilidades::alerta('Conta excluída :(!');
+                        \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                    }else{
+                        \UZU_LucasR_Marcos\Utilidades::alerta('Algo deu errado!');
+                        \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH.'Perfil');
+                    }
+                }
+
                 if (isset($_POST['atualizar'])){
                     $pdo = \UZU_LucasR_Marcos\SQL::connect();
-                    $nome = strip_tags($_POST['Nome']); //Não está atualizando (Fica vazio)
+                    $nome = strip_tags($_POST['Nome']);
                     $senha = $_POST['Senha'];
 
                     if ($nome == '' || strlen($nome) < 2){ //Se Nome for vazio ou menor que 3 caracteres
