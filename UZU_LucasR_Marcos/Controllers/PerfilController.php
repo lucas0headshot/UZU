@@ -58,6 +58,23 @@
 
                 }
 
+                if (isset($_POST['excluir'])){ //Excluir conta
+                    $ID = (int) $_SESSION['id'];
+
+                    if ($ID == $_SESSION['id']){ //Se o ID for igual ao da Session
+                        $pdo = \UZU_LucasR_Marcos\SQL::connect();
+                        $excluir = $pdo->prepare("Delete from usuarios where ID = ?");
+                        $excluir->execute(array($ID));
+                        session_unset();
+                        session_destroy();
+                        \UZU_LucasR_Marcos\Utilidades::alerta('Conta excluída :(!');
+                        \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH);
+                    }else{
+                        \UZU_LucasR_Marcos\Utilidades::alerta('Algo deu errado!');
+                        \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH.'Perfil');
+                    }
+                }
+
                 \UZU_LucasR_Marcos\Views\MainView::Render('Perfil'); //Renderizar Perfil
             }else{
                 \UZU_LucasR_Marcos\Utilidades::redirect(INCLUDE_PATH); //Renderizar Login

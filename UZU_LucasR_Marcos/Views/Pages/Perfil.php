@@ -33,8 +33,9 @@
                     <h2>Senha:</h2>
                     <input type="password" name="Senha" placeholder="Nova senha"">
                     <input type="file" name="file">
-                    <input type="hidden" name="atualizar" value="atualizar">
-                    <input type="submit" name="acao" value="Salvar!">
+                    <input type="submit" name="atualizar" value="Salvar!">
+                    <br/><br/>
+                    <input type="submit" name="excluir" value="Excluir conta">
                 </form>
             </div>
 
